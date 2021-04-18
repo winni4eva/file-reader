@@ -1,0 +1,29 @@
+#!/usr/bin/env php
+<?php
+set_time_limit(0);
+
+/*
+|--------------------------------------------------------------------------
+| Register The Composer Auto Loader
+|--------------------------------------------------------------------------
+|
+| Composer provides a convenient, automatically generated class loader
+| for our application.
+|
+*/
+
+require __DIR__.'../../vendor/autoload.php';
+
+/*
+|--------------------------------------------------------------------------
+| Getting An Instance Of Our File Reader Class To Start Processing File
+|--------------------------------------------------------------------------
+|
+| We retrieve all necessary arguments passed to start processing the file
+| 
+|
+*/
+
+$reader = new Winnipass\FileReader();
+echo $reader->setFilePath($argv)->read()->render();
+echo "\n";
